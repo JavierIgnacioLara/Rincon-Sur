@@ -1,6 +1,6 @@
 package com.example.proyectorinconsur.domain.model
 
-class AccessosUIState(
+data class AccessosUIState(
     val hayTurnoActivo: Boolean = false,
     val resumen: Estadisticas = Estadisticas(),
     val porAcceso: Map<Int, Estadisticas> = emptyMap()

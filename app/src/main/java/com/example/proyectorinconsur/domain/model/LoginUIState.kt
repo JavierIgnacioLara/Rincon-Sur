@@ -1,6 +1,6 @@
 package com.example.proyectorinconsur.domain.model
 
-class LoginUIState (
+data class LoginUIState (
     val correo: String = "",
     val clave: String = "",
     val recordar: Boolean = false,

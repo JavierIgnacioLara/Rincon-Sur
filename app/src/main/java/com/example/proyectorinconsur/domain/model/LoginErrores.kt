@@ -1,6 +1,6 @@
 package com.example.proyectorinconsur.domain.model
 
-class LoginErrores (
+data class LoginErrores (
     val correo: String? = null,
     val clave: String? = null
 

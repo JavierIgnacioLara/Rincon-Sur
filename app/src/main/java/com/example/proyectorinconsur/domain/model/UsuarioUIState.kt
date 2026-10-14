@@ -1,6 +1,6 @@
 package com.example.proyectorinconsur.domain.model
 
-class UsuarioUIState (
+data class UsuarioUIState (
     val nombre: String = "",
     val correo: String = "",
     val clave: String = "",
