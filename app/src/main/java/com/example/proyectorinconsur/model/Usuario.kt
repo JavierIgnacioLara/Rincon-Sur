@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 const val ROL_ADMIN = "ADMIN"
 const val ROL_OPERADOR = "OPERADOR"

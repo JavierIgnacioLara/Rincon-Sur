@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 data class InicioUIState (
     val nombre: String = "",

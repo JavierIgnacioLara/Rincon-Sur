@@ -1,7 +1,7 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
-import com.example.proyectorinconsur.domain.usecase.calcularEstadisticas
-import com.example.proyectorinconsur.domain.usecase.deAcceso
+import com.example.proyectorinconsur.usecase.calcularEstadisticas
+import com.example.proyectorinconsur.usecase.deAcceso
 
 
 data class HistorialUIState (

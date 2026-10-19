@@ -1,6 +1,6 @@
-package com.example.proyectorinconsur.domain.validation
+package com.example.proyectorinconsur.validation
 
-import com.example.proyectorinconsur.domain.model.MAX_ACOMPANANTES
+import com.example.proyectorinconsur.model.MAX_ACOMPANANTES
 
 const val MIN_PASSWORD_LENGTH = 8
 

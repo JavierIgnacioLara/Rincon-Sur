@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 const val ESTADO_ACTIVO = "ACTIVO"
 const val ESTADO_CERRADO = "CERRADO"

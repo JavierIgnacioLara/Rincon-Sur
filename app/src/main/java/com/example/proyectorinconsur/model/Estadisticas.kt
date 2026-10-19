@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 interface ClasificacionRegistro {
     val accesoEntradaId: Int

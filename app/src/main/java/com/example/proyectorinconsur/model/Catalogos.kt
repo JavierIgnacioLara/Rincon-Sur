@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 // Opciones fijas del formulario «Registrar persona». Se guarda en SQLite solo el id.
 data class Opcion(val id: Int, val etiqueta: String, val detalle: String? = null)

@@ -1,4 +1,4 @@
-package com.example.proyectorinconsur.domain.model
+package com.example.proyectorinconsur.model
 
 data class RegistrarPersonaErrores(
     val entrada: String? = null,

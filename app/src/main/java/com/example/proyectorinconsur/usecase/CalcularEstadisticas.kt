@@ -1,14 +1,14 @@
-package com.example.proyectorinconsur.domain.usecase
+package com.example.proyectorinconsur.usecase
 
-import com.example.proyectorinconsur.domain.model.ClasificacionRegistro
-import com.example.proyectorinconsur.domain.model.Estadisticas
-import com.example.proyectorinconsur.domain.model.GENERO_HOMBRE
-import com.example.proyectorinconsur.domain.model.GENERO_MUJER
-import com.example.proyectorinconsur.domain.model.RANGO_ADULTO
-import com.example.proyectorinconsur.domain.model.RANGO_MAYOR
-import com.example.proyectorinconsur.domain.model.RANGO_NINO
-import com.example.proyectorinconsur.domain.model.TIPO_COMPRO
-import com.example.proyectorinconsur.domain.model.TIPO_TRANSITO
+import com.example.proyectorinconsur.model.ClasificacionRegistro
+import com.example.proyectorinconsur.model.Estadisticas
+import com.example.proyectorinconsur.model.GENERO_HOMBRE
+import com.example.proyectorinconsur.model.GENERO_MUJER
+import com.example.proyectorinconsur.model.RANGO_ADULTO
+import com.example.proyectorinconsur.model.RANGO_MAYOR
+import com.example.proyectorinconsur.model.RANGO_NINO
+import com.example.proyectorinconsur.model.TIPO_COMPRO
+import com.example.proyectorinconsur.model.TIPO_TRANSITO
 
 
 fun calcularEstadisticas(registros: List<ClasificacionRegistro>): Estadisticas = Estadisticas(
