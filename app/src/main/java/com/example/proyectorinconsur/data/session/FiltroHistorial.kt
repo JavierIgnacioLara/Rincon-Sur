@@ -6,3 +6,4 @@ import kotlinx.coroutines.flow.MutableStateFlow
 class FiltroHistorial {
     val fecha = MutableStateFlow(inicioDelDia(System.currentTimeMillis()))
     val acceso = MutableStateFlow(0)
+}
