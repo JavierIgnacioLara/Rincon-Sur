@@ -1,6 +1,5 @@
 package com.example.proyectorinconsur.data.repository
 
-
 import android.database.sqlite.SQLiteConstraintException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

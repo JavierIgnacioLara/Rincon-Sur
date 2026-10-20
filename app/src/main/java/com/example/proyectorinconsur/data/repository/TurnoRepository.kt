@@ -41,7 +41,7 @@ class TurnoRepository(private val dao: TurnoDao) {
         }
     }
 
-    /** Guarda la hora de cierre. Los registros del turno se conservan. */
+
     suspend fun cerrarTurno(turnoId: Long): Boolean =
         try { dao.cerrar(turnoId, System.currentTimeMillis()) > 0 } catch (e: Exception) { false }
 
