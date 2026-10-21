@@ -6,7 +6,6 @@ sealed class Screen(val route: String) {
     data object Login : Screen("login")
     data object CrearUsuario : Screen("crear_usuario")
 
-    // Las tres pestañas de la barra inferior
     data object Inicio : Screen("inicio")
     data object Accesos : Screen("accesos")
     data object Historial : Screen("historial")

@@ -176,7 +176,6 @@ private fun SelectorFecha(texto: String, onClick: () -> Unit) {
     }
 }
 
-
 @Composable
 private fun FilaPestanas(seleccionado: Int, onSeleccionar: (Int) -> Unit) {
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
