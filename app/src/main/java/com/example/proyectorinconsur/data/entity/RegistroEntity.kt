@@ -13,7 +13,7 @@ import androidx.room.PrimaryKey
         childColumns = ["turnoId"],
         onDelete = ForeignKey.RESTRICT
     )],
-    indices = [Index("turnoId"), Index("aceesoEntradaId"), Index("fechaHora")]
+    indices = [Index("turnoId"), Index("accesoEntradaId"), Index("fechaHora")]
 )
 
 data class RegistroEntity (
