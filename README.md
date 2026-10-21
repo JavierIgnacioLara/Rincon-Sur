@@ -3,7 +3,7 @@
 Aplicación Android para una tienda departamental que registra el flujo de personas por acceso y distingue
 entre quienes **transitan** y quienes **compran**. Funciona 100 % en local, sin servidor.
 
-Evaluación Parcial 2 · Desarrollo de Aplicaciones Móviles · DuocUC 
+##Evaluación Parcial 2 · Desarrollo de Aplicaciones Móviles · DuocUC 
 
 
 | Integrantes: Javiera Rebolledo - Javier Lara |
@@ -11,7 +11,7 @@ Evaluación Parcial 2 · Desarrollo de Aplicaciones Móviles · DuocUC
 | Repositorio en GitHub: https://github.com/JavierIgnacioLara/Rincon-Sur |
 
 
-Tecnologías
+##Tecnologías
 - Kotlin, Jetpack Compose y Material 3
 - Arquitectura MVVM (Pantalla → ViewModel → Repositorio → DAO → Room)
 - Room 2.8.1 con KSP (SQLite local)
