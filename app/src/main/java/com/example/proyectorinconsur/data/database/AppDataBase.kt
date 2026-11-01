@@ -13,7 +13,7 @@ import com.example.proyectorinconsur.data.entity.UsuarioEntity
 
 @Database(
     entities = [UsuarioEntity::class, TurnoEntity::class, RegistroEntity::class],
-    version = 5,
+    version = 6,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

@@ -16,11 +16,14 @@ import java.io.File
 fun tienePermisoCamara(context: Context): Boolean =
     ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED
 
-fun crearUriFoto(context: Context): Uri {
+fun crearArchivoFoto(context: Context): File {
     val carpeta = File(context.filesDir, "fotos").apply { mkdirs() }
-    val archivo = File(carpeta, "turno_${System.currentTimeMillis()}.jpg")
-    return FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", archivo)
+    return File(carpeta, "turno_${System.currentTimeMillis()}.jpg")
 }
+fun uriDeArchivo(context: Context, archivo: File): Uri =
+    FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", archivo)
+
+fun crearUriFoto(context: Context): Uri = uriDeArchivo(context, crearArchivoFoto(context))
 
 fun abrirAjustesDeLaApp(context: Context) {
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null))

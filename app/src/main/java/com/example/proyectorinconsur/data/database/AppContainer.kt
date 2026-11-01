@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 
-/** Crea una sola vez la base de datos, los repositorios y la sesión (sobrevive a la rotación). */
 class AppContainer private constructor(context: Context) {
     private val db = AppDatabase.obtener(context)
     private val preferencias = UserPreferences(context.applicationContext)
@@ -24,7 +23,7 @@ class AppContainer private constructor(context: Context) {
     val sesion = SessionManager(preferencias, usuarioRepository)
     val filtroHistorial = FiltroHistorial()
 
-    /** Turno activo del usuario con sesión iniciada (null si no hay sesión o no hay turno activo). */
+
     @OptIn(ExperimentalCoroutinesApi::class)
     val turnoActivo: Flow<Turno?> = sesion.usuarioId.flatMapLatest { id ->
         if (id == null) flowOf(null) else turnoRepository.observarActivo(id)

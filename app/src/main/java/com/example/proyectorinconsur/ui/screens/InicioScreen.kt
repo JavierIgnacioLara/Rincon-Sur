@@ -38,6 +38,10 @@ import com.example.proyectorinconsur.utils.tienePermisoCamara
 import com.example.proyectorinconsur.utils.permisoCamaraDeclarado
 import com.example.proyectorinconsur.utils.esPantallaAncha
 import com.example.proyectorinconsur.ui.layouts.ScaffoldAdaptable
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import com.example.proyectorinconsur.ui.components.CamaraCaptura
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -59,7 +63,7 @@ fun InicioScreen(
 
     LaunchedEffect(usuarioId) { if (usuarioId == null) onSesionCerrada() }
 
-    // Al empezar el turno se pasa directo a «Registrar persona»
+
     LaunchedEffect(estado.turnoIniciado) {
         if (estado.turnoIniciado) {
             viewModel.consumirTurnoIniciado()
@@ -78,20 +82,36 @@ fun InicioScreen(
     }
 
 
-    val camaraLauncher = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { exito ->
-        viewModel.resultadoCamara(exito)
-    }
+    var mostrarCamara by rememberSaveable { mutableStateOf(false) }
 
-    fun abrirCamara() {
-        try {
-            val uri = crearUriFoto(context)
-            viewModel.prepararCamara(uri.toString())
-            camaraLauncher.launch(uri)
-        } catch (e: Exception) {
+    fun abrirCamara() { mostrarCamara = true }
 
-            viewModel.mostrarError("No se pudo abrir la cámara. Revisa el FileProvider en AndroidManifest.xml y res/xml/file_paths.xml.")
+    if (mostrarCamara) {
+        Dialog(
+            onDismissRequest = {
+                mostrarCamara = false
+                viewModel.resultadoCamara(false)
+            },
+            properties = DialogProperties(usePlatformDefaultWidth = false)
+        ) {
+            CamaraCaptura(
+                onFotoTomada = { uri ->
+                    mostrarCamara = false
+                    viewModel.prepararCamara(uri.toString())
+                    viewModel.resultadoCamara(true)
+                },
+                onCancelar = {
+                    mostrarCamara = false
+                    viewModel.resultadoCamara(false)
+                },
+                onError = { mensaje ->
+                    mostrarCamara = false
+                    viewModel.mostrarError(mensaje)
+                }
+            )
         }
     }
+
 
     val permisoLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { concedido ->
         if (concedido) {

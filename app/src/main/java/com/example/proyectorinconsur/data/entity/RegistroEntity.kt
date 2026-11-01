@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "registros",
     foreignKeys = [ForeignKey(
-        entity = UsuarioEntity::class,
+        entity = TurnoEntity::class,
         parentColumns = ["id"],
         childColumns = ["turnoId"],
         onDelete = ForeignKey.RESTRICT
