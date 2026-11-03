@@ -41,7 +41,7 @@ fun SelectorAcompanantes(
         Spacer(Modifier.height(6.dp))
         Surface(
             shape = RoundedCornerShape(12.dp),
-            color = MaterialTheme.colorScheme.surfaceVariant,   // mismo gris que los botones de arriba
+            color = MaterialTheme.colorScheme.surfaceVariant,
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(modifier = Modifier.padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {

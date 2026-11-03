@@ -13,7 +13,7 @@ const val RANGO_MAYOR = 3
 const val TIPO_TRANSITO = 1
 const val TIPO_COMPRO = 2
 
-const val MAX_ACOMPANANTES = 10   // máximo de acompañantes por tipo (adultos o niños)
+const val MAX_ACOMPANANTES = 10
 
 val ACCESOS = (1..4).map { Opcion(it, "Acceso $it") }
 
@@ -33,5 +33,4 @@ val TIPOS_REGISTRO = listOf(
     Opcion(TIPO_COMPRO, "Compró", "realizó compra")
 )
 
-/** Texto de un id (por ejemplo, en el historial). */
 fun List<Opcion>.etiquetaDe(id: Int): String = firstOrNull { it.id == id }?.etiqueta ?: "—"

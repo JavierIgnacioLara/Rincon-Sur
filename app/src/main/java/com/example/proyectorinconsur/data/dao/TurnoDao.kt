@@ -21,7 +21,6 @@ interface TurnoDao {
     @Query("SELECT * FROM turnos WHERE usuarioId = :usuarioId AND estado = 'ACTIVO' LIMIT 1")
     suspend fun obtenerActivoDeUsuario(usuarioId: Long): TurnoEntity?
 
-    // Devuelve cuántas filas cambió (Int); solo cierra turnos que siguen activos
     @Query("UPDATE turnos SET estado = 'CERRADO', horaFin = :horaFin WHERE id = :id AND estado = 'ACTIVO'")
     suspend fun cerrar(id: Long, horaFin: Long): Int
 

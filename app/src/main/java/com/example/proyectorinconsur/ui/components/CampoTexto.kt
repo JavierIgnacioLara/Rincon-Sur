@@ -41,7 +41,7 @@ fun CampoTexto(
     accionIme: ImeAction = ImeAction.Next,
     alAccionIme: () -> Unit = {}
 ) {
-    // rememberSaveable: si giras el celular, la contraseña sigue visible u oculta como estaba
+
     var claveVisible by rememberSaveable { mutableStateOf(false) }
     val foco = LocalFocusManager.current
 
