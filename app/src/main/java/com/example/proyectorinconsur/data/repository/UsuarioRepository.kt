@@ -29,7 +29,7 @@ class UsuarioRepository(private val dao: UsuarioDao) {
     suspend fun buscarPorId(id: Long): Usuario? = dao.obtenerPorId(id)?.toDomain()
 
     suspend fun registrar(nombre: String, correo: String, clave: String): ResultadoRegistro =
-        withContext(Dispatchers.Default) {   // el hash es costoso: fuera del hilo principal
+        withContext(Dispatchers.Default) {
             try {
                 val correoNormalizado = correo.trim().lowercase()
                 if (dao.obtenerPorCorreo(correoNormalizado) != null) {
